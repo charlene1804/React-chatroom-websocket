@@ -1,0 +1,76 @@
+@use 'src/styles/vars';
+
+.settings {
+  position: fixed;
+  display: flex;
+  top: 0;
+  right: -172px;
+  transition: right 0.5s;
+
+  &--open {
+    right: 0;
+  }
+
+  &__error {
+    font-weight: bold;
+    text-align: center;
+    font-size: 1.3rem;
+    color: vars.$error;
+  }
+
+  &__toggle {
+    background-color: vars.$light-color;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    line-height: 29px;
+    color: vars.$purple;
+    font-size: 1.8rem;
+    margin-top: 1rem;
+    margin-right: 0.8rem;
+    transition: transform 0.5s;
+
+    // si les settings sont ouverts, on tourne le + pour qu'il corresponde à une croix.
+    &--open {
+      transform: rotate(45deg);
+    }
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    padding-top: 1rem;
+    padding-right: 1rem;
+    width: 170px;
+  }
+
+  &__input {
+    margin-bottom: 0.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    border: none;
+  }
+
+  &__submit {
+    margin-top: 0.5rem;
+    background-color: vars.$purple;
+    color: vars.$light-color;
+    border: none;
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+
+    &--loading {
+      animation: blink 1s linear infinite;
+    }
+  }
+}
+
+@keyframes blink {
+  from {
+    background-color: vars.$purple;
+  }
+  to {
+    background-color: vars.$lightpurple;
+  }
+}

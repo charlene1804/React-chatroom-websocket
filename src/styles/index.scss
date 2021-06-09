@@ -1,0 +1,77 @@
+@use 'reset';
+@use 'vars';
+
+body {
+  font-family: sans-serif;
+  padding: 0 10%;
+  background-color: #13405D;
+}
+.app{
+  background-color: #BDDCF0;
+}
+.messages{
+  padding: 2em;
+}
+.message{
+  padding: 1em 0;
+}
+.userName{
+  padding: 1.5em;
+}
+.messageText{
+  padding: 1.5em;
+  border: 1px, solid, #fff;
+  color: #61A2D2;
+  background-color: #fff;
+  position: relative;
+  border-radius: 1.5rem;
+}
+.messageText::before {
+	// layout
+	content: '';
+	position: absolute;
+	width: 0;
+	height: 0;
+	bottom: 100%;
+	left: 1.5em; // offset should move with padding of parent
+	border: .75rem solid transparent;
+	border-top: none;
+
+	// looks
+	border-bottom-color: #fff;
+	filter: drop-shadow(0 -0.0625rem 0.0625rem rgba(0, 0, 0, .1));
+}
+.messageForm{
+  
+  margin-top: 2em;
+   /* This bit sets up the horizontal layout */
+   display:flex;
+   flex-direction:row;
+   
+   border: none !important;
+}
+.textInput{
+  padding: 1em;
+  font-size: 1.2em;
+   /* Tell the input to use all the available space */
+   flex-grow:2;
+   /* And hide the input's outline, so the form looks like the outline */
+   border:none;
+}
+.messageButton{
+   /* Just a little styling to make it pretty */
+   background: white;
+   border: none !important;
+}
+
+/* 
+  // or you can import your own font
+  @font-face {
+    font-family: 'Roboto';
+    src: url('../assets/fonts/Roboto-Regular.ttf');
+  }
+
+  body {
+    font-family: 'Roboto', sans-serif;
+  }
+*/
